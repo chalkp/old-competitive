@@ -1,27 +1,54 @@
 #include <bits/stdc++.h>
-using namespace std;
-typedef pair<int, int> pii;
-#define vec vector
-#define f first
-#define s second
-//แหก
-int main() {
-  cin.tie(nullptr);
-  ios_base::sync_with_stdio(false);
 
-  int N, M, count, press, index;
-  set<pii> bottle;
-  cin >> N >> M;
-  for(int i=0; i<N; i++) {
-    cin >> count;
-    bottle.insert(make_pair(count, i));
+const int N = 100002;
+
+struct bottle {
+  int h, index;
+  bool operator < (const bottle &b) const {
+    if(h != b.h) {
+      return b.h > h;
+    } else {
+      return b.index < index;
+    }
   }
-  for(int i=0; i<M; i++) {
-    count = 0;
-    cin >> press;
-    auto it = bottle.lower_bound({press, -1});
+};
 
-    cout << count << '\n';
+bool arr[N];
+
+int main() {
+  std::ios_base::sync_with_stdio(false);
+  std::cin.tie(nullptr);
+  int n, m, h, count;
+  std::priority_queue<bottle> prioq;
+  std::queue<bottle> q;
+  std::cin >> n >> m;
+  for(int i=1; i<=n; i++) {
+    arr[i] = true;
+    std::cin >> h;
+    prioq.push({h, i});
+  }
+
+  for(int i=0; i<m; i++) {
+    std::cin >> h;
+    count=0;
+    while((!prioq.empty()) && prioq.top().h > h) {
+      if(arr[prioq.top().index]) {
+        q.push(prioq.top());
+      }
+      prioq.pop();
+    }
+
+    while(!q.empty()) {
+      auto it = q.front();
+      q.pop();
+      for(int j=it.index-1; j<=it.index+1; j++) {
+        if(arr[j]) {
+          arr[j]=0;
+          count++;
+        }
+      }
+    }
+    std::cout << count << '\n';
   }
 
   return 0;
