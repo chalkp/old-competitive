@@ -1,12 +1,11 @@
 #include <bits/stdc++.h>
+using namespace std;
+
+bool nugget[200];
 
 int main() {
-  std::ios_base::sync_with_stdio(false);
-  std::cin.tie(nullptr);
-  bool nugget[200];
-  for(int i=1; i<=200; i++) {
-    nugget[i] = false;
-  }
+  ios_base::sync_with_stdio(false);
+  cin.tie(nullptr);
   nugget[0]=true;
   for(int i=0; i<=109; i++) {
     if(nugget[i]) {
@@ -15,14 +14,15 @@ int main() {
       nugget[i+20] = true;
     }
   }
+
   int n;
-  std::cin >> n;
+  cin >> n;
   if(n<6) {
-    std::cout << "no" << '\n';
+    cout << "no" << '\n';
   } else {
     for(int i=1; i<=n; i++) {
       if(nugget[i]) {
-        std::cout << i << '\n';
+        cout << i << '\n';
       }
     }
   }

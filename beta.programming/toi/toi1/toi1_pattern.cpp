@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 5e4+5;
-bool pattern[75][N];
+bool pattern[77][N];
+
 int main() {
   ios_base::sync_with_stdio(false);
   cin.tie(nullptr);
