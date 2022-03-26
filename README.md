@@ -15,7 +15,7 @@ The question Labels :
 The question Labels :
 - question number
 
-[**OCOM WU**](https://woi.wu.ac.th/header.php)  shittiest grader I have ever use, made by Walailak University only for harvesting pain from users
+[**OCOM WU**](https://woi.wu.ac.th/header.php)  shittiest grader I have ever use, made by Walailak University used for harvesting pain from users and use those in labs
 
 |website         |Username  |Activeness  |URL                              |
 |----------------|----------|------------|---------------------------------|
