@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-  cin.tie(nullptr);
-  ios_base::sync_with_stdio(false);
+long long int sum[200000], q;
+int N, Q;
 
-  int N, Q;
+int main() {
+  ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
+
   cin >> N >> Q;
-  long long int sum[200000], q;
   sum[0] = 0;
   for(int i=1; i<=N; i++) {
     cin >> sum[i];

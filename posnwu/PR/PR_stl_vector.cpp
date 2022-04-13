@@ -50,7 +50,7 @@ int main() {
     while(t--) {
         solve();
         cout << '\n';
-        v.erase(vec.begin(),vec.end());
+        v.erase(v.begin(),v.end());
     }
 
     return 0;
