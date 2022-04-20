@@ -6,10 +6,10 @@ int main() {
   cin.tie(nullptr);
   cout.tie(nullptr);
 
-  int n, owo=0;
+  long long int n, owo=0;
   cin >> n;
-  while(n--) {
-    owo += n*(n-1)/2;
+  for(int i=1; i<=n; i++) {
+    owo += i*(i+1)/2;
   }
   cout << owo;
 

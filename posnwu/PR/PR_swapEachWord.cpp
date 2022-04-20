@@ -1,6 +1,4 @@
 #include <bits/stdc++.h>
-#define author chalk
-#define center walailak
 using namespace std;
 
 int main() {
