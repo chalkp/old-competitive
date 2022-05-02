@@ -6,11 +6,12 @@ const int N = 2e5+7;
 struct road {
   int v, u, w; // prefecture A, prefecture B, village count
   bool operator < (const road &p) const {
-    return p.w > w;
+    return p.w < w;
   }
 };
 
-priority_queue<road> prioq;
+vector<road> v;
+
 int pa[N];
 
 int root(int x) {
@@ -23,9 +24,8 @@ int root(int x) {
 
 void kruskal() {
   long long int village = 0;
-  while(!prioq.empty()) {
-    road current = prioq.top();
-    prioq.pop();
+  sort(v.begin(), v.end());
+  for(road current: v) {
     if(root(current.v) != root(current.u)) {
       pa[root(current.v)] = root(current.u);
       village += current.w-1;
@@ -49,7 +49,7 @@ int main() {
   while(m--) {
     int p, q, w;
     cin >> p >> q >> w;
-    prioq.push({p, q, w});
+    v.push_back({p, q, w});
   }
 
   kruskal();
