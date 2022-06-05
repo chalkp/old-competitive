@@ -6,7 +6,13 @@ int main() {
   cin.tie(nullptr);
   cout.tie(nullptr);
 
-  long long int a, b;
+  int n;
+  cin >> n;
+  while(n--) {
+    long long int a, b;
+    cin >> a >> b;
+    cout << a+b << '\n';
+  }
 
   return 0;
 }

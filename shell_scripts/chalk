@@ -1,0 +1,17 @@
+echo "cpp file (without .cpp)"
+read cpp
+
+compile() {
+  /usr/bin/g++ "${cpp}.cpp" -o "$cpp" -std=gnu++17 -lm -DEVAL -O2 -pipe -static -s
+}
+
+run() {
+  ./${cpp}
+}
+
+compile
+echo "compiled to ${cpp}"
+echo "running ${cpp}"
+run
+
+rm -f $cpp
